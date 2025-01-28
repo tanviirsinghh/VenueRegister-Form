@@ -404,11 +404,11 @@ const handleAvailabilityChange = (index, e) => {
     availability: updatedAvailability,
   }));
 };
-if(isLoading){
-  return (
-    <div>fuck</div>
-  )
-}
+// if(isLoading){
+//   return (
+//     <div>fuck</div>
+//   )
+// }
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <form
@@ -425,6 +425,8 @@ if(isLoading){
             name="name"
             value={formData.name}
             onChange={handleChange}
+            placeholder="Name"
+
             className="w-full p-2 border rounded-lg"
             required
           />
@@ -436,6 +438,8 @@ if(isLoading){
           <input
             type="text"
             name="location.address"
+            placeholder="Address"
+
             value={formData.location.address}
             onChange={handleChange}
             className="w-full p-2 border rounded-lg"
@@ -448,6 +452,8 @@ if(isLoading){
             <input
               type="text"
               name="location.city"
+              placeholder="Your City"
+
               value={formData.location.city}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg"
@@ -459,6 +465,8 @@ if(isLoading){
             <input
               type="text"
               name="location.state"
+              placeholder="State"
+
               value={formData.location.state}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg"
@@ -472,6 +480,8 @@ if(isLoading){
             <input
               type="text"
               name="location.country"
+              placeholder="Country you live in"
+
               value={formData.location.country}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg"
@@ -481,8 +491,10 @@ if(isLoading){
           <div>
             <label className="block text-sm font-medium mb-2">Pincode</label>
             <input
-              type="text"
+              type="number"
               name="location.pincode"
+              placeholder="Number"
+
               value={formData.location.pincode}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg"
@@ -495,6 +507,8 @@ if(isLoading){
             <label className="block text-sm font-medium mb-2">Latitude</label>
             <input
               type="number"
+              placeholder="Number"
+
               name="location.latitude"
               value={formData.location.latitude}
               onChange={handleChange}
@@ -505,6 +519,7 @@ if(isLoading){
             <label className="block text-sm font-medium mb-2">Longitude</label>
             <input
               type="number"
+              placeholder="Number"
               name="location.longitude"
               value={formData.location.longitude}
               onChange={handleChange}
@@ -519,6 +534,7 @@ if(isLoading){
           <input
             type="number"
             name="capacity"
+            placeholder="Number"
             value={formData.capacity}
             onChange={handleChange}
             className="w-full p-2 border rounded-lg"
@@ -563,6 +579,7 @@ if(isLoading){
               <input
                 type="number"
                 name="dimensions.length"
+                placeholder="Number"
                 value={formData.dimensions.length}
                 onChange={handleChange}
                 className="w-full p-2 border rounded-lg"
@@ -573,6 +590,7 @@ if(isLoading){
               <input
                 type="number"
                 name="dimensions.width"
+                placeholder="Number"
                 value={formData.dimensions.width}
                 onChange={handleChange}
                 className="w-full p-2 border rounded-lg"
@@ -583,6 +601,7 @@ if(isLoading){
               <input
                 type="number"
                 name="dimensions.radius"
+                placeholder="Number"
                 value={formData.dimensions.radius}
                 onChange={handleChange}
                 className="w-full p-2 border rounded-lg"
@@ -614,6 +633,7 @@ if(isLoading){
             <input
               type="number"
               name="pitch.length"
+              placeholder="Meter"
               value={formData.pitch.length}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg"
@@ -625,6 +645,7 @@ if(isLoading){
             <input
               type="number"
               name="pitch.width"
+              placeholder="Meter"
               value={formData.pitch.width}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg"
@@ -734,6 +755,7 @@ if(isLoading){
                   <input
                     type="text"
                     name="eventName"
+                    placeholder="Name"
                     value={event.eventName}
                     onChange={(e) => handleEventChange(index, e)}
                     className="w-full p-2 border rounded-lg"
@@ -745,6 +767,7 @@ if(isLoading){
                   <input
                     type="date"
                     name="date"
+
                     value={event.date}
                     onChange={(e) => handleEventChange(index, e)}
                     className="w-full p-2 border rounded-lg"
@@ -775,6 +798,7 @@ if(isLoading){
                 <input
                   type="text"
                   name="teams"
+                  placeholder="Enter teams separated by commas"
                   value={event.teams.join(", ")}
                   onChange={(e) => {
                     const { value } = e.target;
@@ -788,7 +812,6 @@ if(isLoading){
                     }));
                   }}
                   className="w-full p-2 border rounded-lg"
-                  placeholder="Enter teams separated by commas"
                 />
               </div>
             </div>
@@ -828,6 +851,20 @@ if(isLoading){
                     />
                     Is Booked
                   </label>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    Booked By
+                  </label>
+                  <input
+                    type="text"
+                    name="eventName"
+                    placeholder="Name"
+                    value={availability.bookedBy}
+                    onChange={(e) => handleEventChange(index, e)}
+                    className="w-full p-2 border rounded-lg"
+                    required
+                  />
                 </div>
               </div>
             </div>
@@ -923,6 +960,7 @@ if(isLoading){
           <input
             type="text"
             name="contact.name"
+            placeholder="Name"
             value={formData.contact.name}
             onChange={handleChange}
             className="w-full p-2 border rounded-lg"
@@ -933,8 +971,9 @@ if(isLoading){
           <div>
             <label className="block text-sm font-medium mb-2">Phone</label>
             <input
-              type="text"
+              type="number"
               name="contact.phone"
+              placeholder="+91"
               value={formData.contact.phone}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg"
